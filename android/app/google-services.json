@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "689910697547",
+    "project_id": "piadas-ecd03",
+    "storage_bucket": "piadas-ecd03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689910697547:android:c6844faa34f3244f7b07ce",
+        "android_client_info": {
+          "package_name": "com.geradorpiadas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689910697547-iid0an5p12afr83u0g9ijjl18gnk9vuv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgp8pfV2ULd1KBztZCtrh_Y6HG7u7RmM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689910697547-iid0an5p12afr83u0g9ijjl18gnk9vuv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
