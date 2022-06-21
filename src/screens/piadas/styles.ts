@@ -4,14 +4,14 @@ import styled from 'styled-components';
 export const Container = styled(View)`
   flex: 1;
   padding: 10px;
-  background-color: #dcdcdc;
+
   justify-content: center;
   align-items: center;
 `;
 
 export const Card = styled(View)`
   padding: 20px;
-  height: 200px;
+  height: 220px;
   width: 350px;
   align-items: center;
   justify-content: center;

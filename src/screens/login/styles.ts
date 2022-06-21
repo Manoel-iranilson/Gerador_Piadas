@@ -1,4 +1,4 @@
-import {View, Image} from 'react-native';
+import {View, Image, ImageBackground} from 'react-native';
 import styled from 'styled-components';
 
 export const Container = styled(View)`
@@ -7,9 +7,8 @@ export const Container = styled(View)`
   justify-content: center;
 `;
 
-export const Logo = styled(Image)`
-  width: 120px;
-  height: 100px;
+export const ImageBack = styled(ImageBackground)`
+  width: 100%;
 `;
 
 export const TxtInput = styled(View)`

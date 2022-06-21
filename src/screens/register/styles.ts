@@ -13,8 +13,7 @@ export const Logo = styled(Image)`
 `;
 
 export const Title = styled(Text)`
-  color: white;
-  font-size: 20px;
+  font-size: 45px;
 `;
 
 export const TxtInput = styled(View)`
