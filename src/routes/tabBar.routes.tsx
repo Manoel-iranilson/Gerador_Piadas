@@ -2,6 +2,7 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/home';
 import TotalJokes from '../screens/totalJokes';
+
 import CategoryJokes from '../screens/categoryJokes';
 
 const TabBar: React.FC = () => {
