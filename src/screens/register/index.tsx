@@ -12,9 +12,16 @@ import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import {Container, TxtInput, Btn, Title} from './styles';
 import auth from '@react-native-firebase/auth';
+import {RootStackParamList} from '../../routes/routes';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+
+type CategoryJokesScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Login'
+>;
 
 const Register: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<CategoryJokesScreenProp>();
   const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
   const [opacity] = useState(new Animated.Value(0));
   const [name, setName] = React.useState<string>('');
@@ -40,17 +47,20 @@ const Register: React.FC = () => {
   function handleNewAccount() {
     auth()
       .createUserWithEmailAndPassword(email, passoword)
-      .then(() => Alert.alert('Conta', 'Cadastrado com sucesso!!!'))
-      .catch(error => console.log(error));
+      .then(() => {
+        Alert.alert('Account', 'Registered successfully!!');
+        navigation.navigate('Login');
+      })
+      .catch(() => Alert.alert('Invalid data', 'Check the data and try again'));
   }
 
   return (
     <LinearGradient
       style={{flex: 1}}
-      colors={['#000000', '#363636', '#363636']}>
+      colors={['#F0F8FF', '#FFEFD5', '#FFFACD']}>
       <Container>
         <Animated.View style={{opacity: opacity}}>
-          <Title>Registrar-se</Title>
+          <Title>Register</Title>
         </Animated.View>
         <Animated.View
           style={[
@@ -59,34 +69,31 @@ const Register: React.FC = () => {
           ]}></Animated.View>
         <TxtInput>
           <TextInput
-            placeholder="Digite seu Nome"
+            placeholder="Type your name"
             value={name}
             onChangeText={text => setName(text)}
-            style={{width: 250, padding: 10, color: 'white'}}
-            placeholderTextColor="white"
+            style={{width: 250, padding: 10}}
           />
         </TxtInput>
         <TxtInput>
           <TextInput
-            placeholder="Digite seu Email"
+            placeholder="Type your Email"
             value={email}
             onChangeText={text => setEmail(text)}
-            style={{width: 250, padding: 10, color: 'white'}}
-            placeholderTextColor="white"
+            style={{width: 250, padding: 10}}
           />
         </TxtInput>
         <TxtInput>
           <TextInput
-            placeholder="Digite sua senha"
+            placeholder="Type your Password"
             value={passoword}
             onChangeText={text => setPassoword(text)}
-            style={{width: 250, padding: 10, color: 'white'}}
-            placeholderTextColor="white"
+            style={{width: 250, padding: 10}}
           />
         </TxtInput>
         <TouchableOpacity onPress={() => handleNewAccount()}>
           <Btn>
-            <Text>Registrar</Text>
+            <Text>Register</Text>
           </Btn>
         </TouchableOpacity>
       </Container>

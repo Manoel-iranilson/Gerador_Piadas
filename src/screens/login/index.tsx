@@ -6,14 +6,22 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  ImageBackground,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Container, Btn, TxtInput} from './styles';
+import {Container, Btn, TxtInput, ImageBack} from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import auth from '@react-native-firebase/auth';
+import {RootStackParamList} from '../../routes/routes';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+
+type CategoryJokesScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'TabBar'
+>;
 
 const Login: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<CategoryJokesScreenProp>();
   const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
   const [opacity] = useState(new Animated.Value(0));
   const [email, setEmail] = React.useState<string>('');
@@ -36,29 +44,26 @@ const Login: React.FC = () => {
   });
 
   function handleSingin() {
-    auth()
-      .signInWithEmailAndPassword(email, passoword)
-      .then(() => {
-        navigation.navigate('Tab');
-      })
-      .catch(() =>
-        Alert.alert('Conta invalida', 'Verifique os dados e tente novamente'),
-      );
+    if (email != '' || passoword != '') {
+      auth()
+        .signInWithEmailAndPassword(email, passoword)
+        .then(() => {
+          navigation.navigate('TabBar');
+        })
+        .catch(() =>
+          Alert.alert('Invalid account', 'Check the data and try again'),
+        );
+    } else {
+      Alert.alert('Invalid data', 'Check the data and try again');
+    }
   }
-
   return (
     <LinearGradient
       style={{flex: 1}}
-      colors={['#000000', '#363636', '#363636']}>
+      colors={['#F0F8FF', '#FFEFD5', '#FFFACD']}>
       <Container>
         <Animated.View style={{opacity: opacity}}>
-          <Text style={{color: 'white', fontSize: 30}}>haha</Text>
-          <Text style={{color: 'white', fontSize: 30}}>haha</Text>
-          <Text style={{color: 'white', fontSize: 30}}>hahaha</Text>
-          <Text style={{color: 'white', fontSize: 30}}>hahaha</Text>
-          <Text style={{color: 'white', fontSize: 30}}>hahaha</Text>
-          <Text style={{color: 'white', fontSize: 30}}>hahaha</Text>
-          <Text style={{color: 'white', fontSize: 30}}>Piadas</Text>
+          <Text style={{fontSize: 50}}>JOKES</Text>
         </Animated.View>
         <Animated.View
           style={[
@@ -67,32 +72,30 @@ const Login: React.FC = () => {
           ]}>
           <TxtInput>
             <TextInput
-              style={{width: 250, padding: 10, color: 'white'}}
+              style={{width: 250, padding: 10}}
               value={email}
               onChangeText={text => setEmail(text)}
               placeholder="Email"
-              placeholderTextColor="white"
             />
           </TxtInput>
           <TxtInput>
             <TextInput
-              style={{width: 250, padding: 10, color: 'white'}}
+              style={{width: 250, padding: 10}}
               value={passoword}
               onChangeText={text => setPassoword(text)}
-              placeholder="Senha"
-              placeholderTextColor="white"
+              placeholder="Password"
             />
           </TxtInput>
 
           <TouchableOpacity onPress={() => handleSingin()}>
             <Btn>
-              <Text style={{color: 'white', fontSize: 20}}>Entrar</Text>
+              <Text style={{fontSize: 20}}>Log in</Text>
             </Btn>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => navigation.navigate('register')}>
             <View>
-              <Text style={{color: 'white'}}>Registra-se</Text>
+              <Text>Register</Text>
             </View>
           </TouchableOpacity>
         </Animated.View>
