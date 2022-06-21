@@ -1,31 +1,42 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {RootStackParamList} from '../../routes/routes';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {Card, Container, Title} from './styles';
+import LinearGradient from 'react-native-linear-gradient';
 
-// import { Container } from './styles';
+type CategoryJokesScreenProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'TabBar'
+>;
 
 const CategoryJokes: React.FC = () => {
+  const navigation = useNavigation<CategoryJokesScreenProp>();
   return (
-    <View>
-      <Text>Categorias</Text>
-      <TouchableOpacity>
-        <Text>Misc</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Programação</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Escuro</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Trocadinhos</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Assustador</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text>Natal</Text>
-      </TouchableOpacity>
-    </View>
+    <LinearGradient style={{flex: 1}} colors={['#FFEFD5', '#FFFACD']}>
+      <Container>
+        <Title>Categorias</Title>
+        <Card onPress={() => navigation.navigate('assustador')}>
+          <Text>Assustador</Text>
+        </Card>
+        <Card onPress={() => navigation.navigate('escuro')}>
+          <Text>Escuro</Text>
+        </Card>
+        <Card onPress={() => navigation.navigate('programacao')}>
+          <Text>Programação</Text>
+        </Card>
+        <Card onPress={() => navigation.navigate('misc')}>
+          <Text>Misc</Text>
+        </Card>
+        <Card onPress={() => navigation.navigate('trocadinhos')}>
+          <Text>Trocadinhos</Text>
+        </Card>
+        <Card onPress={() => navigation.navigate('natal')}>
+          <Text>Natal</Text>
+        </Card>
+      </Container>
+    </LinearGradient>
   );
 };
 
