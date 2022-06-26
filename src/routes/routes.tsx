@@ -1,7 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from '../screens/login/';
-import loginAdm from '../screens/loginAdm/index';
 import register from '../screens/register/index';
 import assustador from '../screens/categoryJokes/assustador';
 import escuro from '../screens/categoryJokes/escuro';
@@ -33,7 +32,6 @@ const routes: React.FC = () => {
         name="TabBar"
         component={TabBar}
         options={{headerShown: false}}
-        initialParams={{name: 'TabBar'}}
       />
       <Stack.Screen
         name="Login"
@@ -48,32 +46,92 @@ const routes: React.FC = () => {
       <Stack.Screen
         name="assustador"
         component={assustador}
-        options={{headerShown: false}}
+        options={{
+          title: 'Scary jokes',
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#363636',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
       <Stack.Screen
         name="escuro"
         component={escuro}
-        options={{headerShown: false}}
+        options={{
+          title: 'Dark jokes',
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#363636',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
       <Stack.Screen
         name="misc"
         component={misc}
-        options={{headerShown: false}}
+        options={{
+          title: 'Mystic jokes',
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#363636',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
       <Stack.Screen
         name="natal"
         component={natal}
-        options={{headerShown: false}}
+        options={{
+          title: 'Christmas jokes',
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#363636',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
       <Stack.Screen
         name="programacao"
         component={programacao}
-        options={{headerShown: false}}
+        options={{
+          title: 'Programming jokes',
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#363636',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
       <Stack.Screen
         name="trocadinhos"
         component={trocadinhos}
-        options={{headerShown: false}}
+        options={{
+          title: 'Puns',
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          headerTintColor: '#363636',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
     </Stack.Navigator>
   );
