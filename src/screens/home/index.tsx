@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, Text, View, ActivityIndicator} from 'react-native';
+import {FlatList, Text, View, ActivityIndicator, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 // import { Container } from './styles';
 import api from '../../services/api';
@@ -28,10 +28,15 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     async function Apiget() {
-      const response = await api.get('/joke/Any?amount=10?type=twopart');
-      setPiadas(response.data);
-      console.log(response);
-      setLoad(true);
+      try {
+        const response = await api.get('/joke/Any?amount=10?type=twopart');
+        setPiadas(response.data);
+        console.log(response);
+        setLoad(true);
+      } catch (error) {
+        Alert.alert('Error', 'Verifique se você esta conectado a internet');
+        console.log(error);
+      }
     }
     Apiget();
   }, []);
