@@ -64,7 +64,7 @@ const Piadas: React.FC<IIPiadas> = ({data}) => {
   }
 
   return (
-    <LinearGradient style={{flex: 1}} colors={['#FFEFD5', '#FFFACD']}>
+    <LinearGradient style={{flex: 1}} colors={['#F0E68C', '#FFFACD']}>
       <Container>
         <TouchableOpacity>
           <Card>

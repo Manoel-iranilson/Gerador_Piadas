@@ -58,9 +58,7 @@ const Login: React.FC = () => {
     }
   }
   return (
-    <LinearGradient
-      style={{flex: 1}}
-      colors={['#F0F8FF', '#FFEFD5', '#FFFACD']}>
+    <LinearGradient style={{flex: 1}} colors={['#F0E68C', '#FFFACD']}>
       <Container>
         <Animated.View style={{opacity: opacity}}>
           <Text style={{fontSize: 50}}>JOKES</Text>
