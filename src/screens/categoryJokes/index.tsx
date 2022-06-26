@@ -14,26 +14,25 @@ type CategoryJokesScreenProp = NativeStackNavigationProp<
 const CategoryJokes: React.FC = () => {
   const navigation = useNavigation<CategoryJokesScreenProp>();
   return (
-    <LinearGradient style={{flex: 1}} colors={['#FFEFD5', '#FFFACD']}>
+    <LinearGradient style={{flex: 1}} colors={['#F0E68C', '#FFFACD']}>
       <Container>
-        <Title>Categorias</Title>
         <Card onPress={() => navigation.navigate('assustador')}>
-          <Text>Assustador</Text>
+          <Text>Scary</Text>
         </Card>
         <Card onPress={() => navigation.navigate('escuro')}>
-          <Text>Escuro</Text>
+          <Text>Dark</Text>
         </Card>
         <Card onPress={() => navigation.navigate('programacao')}>
-          <Text>Programação</Text>
+          <Text>Programming</Text>
         </Card>
         <Card onPress={() => navigation.navigate('misc')}>
           <Text>Misc</Text>
         </Card>
         <Card onPress={() => navigation.navigate('trocadinhos')}>
-          <Text>Trocadinhos</Text>
+          <Text>Puns</Text>
         </Card>
         <Card onPress={() => navigation.navigate('natal')}>
-          <Text>Natal</Text>
+          <Text>Christmas</Text>
         </Card>
       </Container>
     </LinearGradient>
