@@ -20,8 +20,22 @@
 ## :hammer: Funcionalidades do projeto
 
 - `Funcionalidade 1`: Se Registrar
+
+https://user-images.githubusercontent.com/89489250/176059884-a25f6592-c507-4e4d-a4aa-2e1b345a8c0b.mp4
+
+
 - `Funcionalidade 2`: Logar
-- `Funcionalidade 3`: Curti e Descurti piadas 
+
+https://user-images.githubusercontent.com/89489250/176060211-012dac64-6881-4128-beae-feaa5d0b4740.mp4
+
+
+- `Funcionalidade 3`: Curti e Descurti piadas e navegar entre as diferente categorias de piadas
+
+https://user-images.githubusercontent.com/89489250/176060849-44074224-5d54-4f55-83c2-8780aa1b6b42.mp4
+
+
 
 <h2>Tecnologias utilizadas</h2>
-<li>React-Native<li>
+<li>React-Native</li>
+<li>FireBase</li>
+<li>JokeApi</li>
